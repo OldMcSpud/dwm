@@ -87,10 +87,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	/*{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },*/
+	/*{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },*/
+	/*{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },*/
+	/*{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },*/
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("playerctl play-pause") },
+	{ MODKEY,                       XK_comma,  spawn,          SHCMD("playerctl previous") },
+	{ MODKEY,                       XK_period, spawn,          SHCMD("playerctl next") },
+	{ MODKEY|ShiftMask,             XK_comma,  spawn,          SHCMD("playerctl position 0") },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
