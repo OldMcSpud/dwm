@@ -113,6 +113,7 @@ static Key keys[] = {
 	{ 0,                            0x1008ff11,spawn,          {.v = volupcmd } },
 	{ 0,                            0x1008ff12,spawn,          {.v = mutecmd } },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("st -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol; kill -44 $pidof dwmblocks") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
