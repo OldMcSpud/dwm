@@ -73,6 +73,8 @@ static const char *voldowncmd[] = { "dwmvoldown5", NULL };
 static const char *volupcmd[] = { "dwmvolup5", NULL };
 static const char *mutecmd[] = { "dwmtogglemute", NULL };
 static const char *filebrowsercmd[] = { "pcmanfm", NULL };
+static const char *screenshotcmd[] = { "flameshot", "full", "-c", "-p", "/home/harry/Pictures/screenshots", NULL };
+static const char *guiscreenshotcmd[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -97,6 +99,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	{ 0,                            XK_Print,  spawn,          {.v = screenshotcmd } },
+	{ ShiftMask,                    XK_Print,  spawn,          {.v = guiscreenshotcmd } },
 	/*{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },*/
 	/*{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },*/
 	/*{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },*/
@@ -109,8 +113,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY,                       XK_minus,  spawn,          {.v = voldowncmd } },
 	{ MODKEY,                       XK_equal,  spawn,          {.v = volupcmd } },
-	{ 0,                            0x1008ff13,spawn,          {.v = voldowncmd } },
-	{ 0,                            0x1008ff11,spawn,          {.v = volupcmd } },
+	{ 0,                            0x1008ff11,spawn,          {.v = voldowncmd } },
+	{ 0,                            0x1008ff13,spawn,          {.v = volupcmd } },
 	{ 0,                            0x1008ff12,spawn,          {.v = mutecmd } },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("st -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pavucontrol; kill -44 $pidof dwmblocks") },
