@@ -75,10 +75,12 @@ static const char *mutecmd[] = { "dwmtogglemute", NULL };
 static const char *filebrowsercmd[] = { "pcmanfm", NULL };
 static const char *screenshotcmd[] = { "flameshot", "full", "-c", "-p", "/home/harry/Pictures/screenshots", NULL };
 static const char *guiscreenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *openroficmd[] = { "rofi", "-modi", "drun,run", "-show", "drun", "-show-icons", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = openroficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
