@@ -1516,6 +1516,14 @@ resizeclient(Client *c, int x, int y, int w, int h)
 	c->oldw = c->w; c->w = wc.width = w;
 	c->oldh = c->h; c->h = wc.height = h;
 	wc.border_width = c->bw;
+
+	if (c->isfloating || selmon->lt[selmon->sellt]->arrange==NULL) {
+	} else {
+		if (selmon->lt[selmon->sellt]->arrange == monocle) {
+			wc.border_width = 0;
+		}
+	}
+
 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
 	configure(c);
 	XSync(dpy, False);
