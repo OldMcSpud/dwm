@@ -21,12 +21,12 @@ static const char col_cyan[]        = "#8be9fd";
 static const char col_purple[]      = "#bd93f9";
 static const char col_gray5[]       = "#6272a4";
 static const char col_orange[]      = "#ffb86c";
-static const char col_darkblue[]    = "#003366";
-static const char col_blue[]        = "#1e90ff";
+static const char col_darkblue[]    = "#458588";
+static const char col_blue[]        = "#4bc5c2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_blue,  col_blue  },
+	[SchemeSel]  = { col_gray4, col_darkblue,  col_darkblue  },
 };
 
 /* tagging */
